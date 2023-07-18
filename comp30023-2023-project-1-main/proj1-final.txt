@@ -1,0 +1,114 @@
+COMP30023 2023 Project 1 After Deadline Tests
+v11, last modified 26/04/23
+
+Checking out a489de1dc9a23f11eb9665896bb11eb00d2cb8fb
+HEAD is now at a489de1 Fixed bug with SJF and lots of testing
+Commit log:
+a489de1 2023-04-16T22:12:53+10:00: Fixed bug with SJF and lots of testing
+5d9e4c8 2023-04-15T16:17:53+10:00: Updated readme with comments on code style
+676e7b2 2023-04-11T16:11:53+10:00: added some new comments, reorganised code a little
+35a7a84 2023-04-07T15:25:00+10:00: fixed errors in comments and magic numbers
+40908cf 2023-04-02T18:36:38+10:00: final comments and cleaning up code
+d6f457f 2023-04-02T03:32:55+10:00: Added gitignore file
+7d47f58 2023-04-02T03:11:24+10:00: Still trying to pass CI tests
+740e955 2023-04-02T03:05:24+10:00: makefile now creates build folders
+a034dc4 2023-04-02T02:45:21+10:00: Testing CI and cleaning up memory leaks
+d156211 2023-04-01T23:42:22+11:00: Cleaning up data type names and stat printing
+8c3597e 2023-03-31T02:49:10+11:00: Cleaning repository
+e776eab 2023-03-31T02:40:13+11:00: Finished task 3 and 4
+e0eef09 2023-03-30T01:52:53+11:00: Attempted task 3
+a1ececb 2023-03-28T19:18:15+11:00: finished task 1 and task 2
+2f13a1d 2023-03-27T21:22:03+11:00: task 1 essentially completed
+c4c486d 2023-03-27T21:21:36+11:00: task 1 essentially completed
+f7f81a5 2023-03-27T01:06:10+11:00: linked list depression
+92616ae 2023-03-27T00:20:55+11:00: Just in case the exe files weren't ignored
+b51d32c 2023-03-27T00:20:22+11:00: I hate linked lists
+3244c2c 2023-03-26T14:14:02+11:00: added test cases
+8d6d148 2023-03-26T13:43:51+11:00: First Commit
+5f85f43 2023-03-12T22:09:57+11:00: init: add .gitlab-ci.yml
+
+Found 1 scripts. Excellent! Removing executable flags
+
+make -B && make clean (output suppressed)
+
+make clean
+
+make
+gcc -Wall -c src/linked_list.c -o build/release/linked_list.o -Iinclude -lm
+gcc -Wall -c src/main.c -o build/release/main.o -Iinclude -lm
+gcc -Wall -c src/process_manager.c -o build/release/process_manager.o -Iinclude -lm
+gcc -Wall -o allocate build/release/linked_list.o build/release/main.o build/release/process_manager.o -Iinclude -lm
+
+OK -- ./allocate found. Copying to clean working directory.
+Task 4: Found
+
+Visible Tests
+Task 1 simple-sjf (0.5): Passed
+Task 1 more-processes (0.5): Passed
+Task 2 simple-rr (0.5): Passed
+Task 2 two-processes-q1 (0.5): Passed
+Task 2 two-processes-q3 (0.5): Passed
+Task 3 simple-bestfit (0.5): Passed
+Task 3 non-fit-sjf (0.5): Passed
+Task 3 non-fit-rr (0.5): Passed
+Task 4 spec (0.5): Passed
+Task 4 more-processes (0.5): Passed
+Task 4 simple-rr (0.5): Passed
+Task 5 simple-sjf (0.5): Passed
+Task 5 two-processes-q3 (0.5): Passed
+
+Hidden Tests
+Task 1 shortest-first (0.25): Passed
+Task 1 even-more-processes (0.5): Passed
+Task 1 order (0.25): Passed
+Task 2 more-processes-1 (0.25): Passed
+Task 2 more-processes-2 (0.5): Passed
+Task 2 20-processes-q2 (0.5): Passed
+Task 2 20-processes-q3 (0.25): Passed
+Task 3 gaps-edge (0.5): Passed
+Task 3 gaps-surround (0.5): Passed
+Task 3 last-in (0.5): "./allocate -f /hiddencases/task3/last-in.txt -m best-fit -q 3 -s SJF" Failed -- Return Code: 124
+Task 4 more-processes-4 (0.5): Passed
+Task 4 20-processes-q3 (0.5): Passed
+Task 4 many-600 (0.25): "./allocate -s RR -m best-fit -f /hiddencases/task4/🙂dir1_long-long()_0*./comp30023/../comp30023/600.txt -q 3" Failed -- Return Code: 124
+Task 4 many-1200 (0.25): "./allocate -s RR -m best-fit -f /hiddencases/task4/🙂dir1_long-long()_0*./comp30023/../comp30023/1200.txt -q 3" Failed -- Return Code: 124
+Task 5 more-processes-5 (0.25): Passed
+Task 5 shortest-first (0.25): Passed
+Task 5 more-processes-2 (0.25): Passed
+Task 5 last-in-rr (0.25): Passed
+
+Ed & Extra (0 marks)
+Task v valgrind-ed217 (0): Passed
+Task 1 ed189 (0): Passed
+Task 3 ed764-10-0 (0): Passed
+Task 4 ed764-10-1 (0): Passed
+Task 2 ed764-10-2 (0): Passed
+Task 1 ed764-10-3 (0): Passed
+Task 4 ed764-10-4 (0): Passed
+Task 5 ed764-10-5 (0): Passed
+Task 5 ed764-10-6 (0): Passed
+Task 2 ed764-10-7 (0): Passed
+Task 4 ed764-10-8 (0): Passed
+Task 4 ed764-10-9 (0): Passed
+Task 1 skip-1 (0): "./allocate -f /hiddencases/extra/skip.txt -s SJF -m infinite -q 1" Failed -- Return Code: 124
+Task 4 skip-4 (0): "./allocate -f /hiddencases/extra/skip.txt -s SJF -m infinite -q 1" Failed -- Return Code: 124
+
+======= Automated Grading Assumptions Below =======
+Re-examination Guidelines: If you'd like to have your assessment grade reviewed, you need to fill the grade review form.
+Do not email as it is very difficult to keep track of 600+ students using email, we prefer to have everything visible on a single spreadsheet.
+
+=============== START RESULTS TABLE ===============
+Task 1: Shortest Job First                    2.00
+Task 2: Round Robin                           3.00
+Task 3: Best Fit Memory Allocation            2.5
+Task 4: Controlling Real processes            2.5
+Task 5: Performance statistics computation    2.00
+Task 6: Build quality                         1
+Task 7: Quality of software practices         1
+Project 1 (Total):                            14
+================ END RESULTS TABLE ================
+Assessor comments:
+Excellent, descriptive commit messages
+Good use of data structures
+Well modularised
+Good, descriptive comments
